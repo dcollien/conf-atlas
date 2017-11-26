@@ -1,0 +1,65 @@
+<html>
+<head>
+    <meta name="description" content="[An example of getting started with Cytoscape.js]" />
+    <link href="simplemde.min.css" rel="stylesheet" />
+    <link href="tagify.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <meta charset=utf-8 />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <title>Learning Pattern Atlas</title>
+    <script src="cytoscape.min.js"></script>
+    <script src="simplemde.min.js"></script>
+    <script src="showdown.min.js"></script>
+    <script src="tagify.min.js"></script>
+</head>
+<body>
+    <div style="display: flex">
+        <div style="height: 100%; display:flex; flex-direction: column;">
+            <div style="flex: 1" class="menu">
+                <header class="header">Learning Patterns</header>
+                <ul id="list"></ul>
+            </div>
+            <div>
+                <button class="btn add" id="addbtn">+ Add Pattern</button>
+            </div>
+        </div>
+        <div style="flex: 1"><div id="cy"></div></div>
+        <div style="flex: 1; display: flex; flex-direction: column;">
+            <div id="title">Title</div>
+            <div style="flex: 1;" id="description">Description</div>
+            <div id="relationships">
+                <div id="forward"></div>
+                <hr/>
+                <div id="reverse"></div>
+            </div>
+        </div>
+    </div>
+    <div id="editor" style="display: none;">
+        <div id="ed-modal">
+            <div style="padding: 10px;">
+                <div style="padding-bottom: 6px;">
+                    <span class="ed-label">Title:</span> <input type="text" id="ed-title" />
+                </div>
+                <div style="padding-bottom: 6px;">
+                    <span class="ed-label">Description:</span>
+                    <textarea id="ed-description"></textarea>
+                </div>
+                <div>
+                    <span class="ed-label">Relationships:</span>
+                    <div id="ed-rels-fwd"></div>
+                    <hr/>
+                    <div id="ed-rels-rev"></div>
+                </div>
+                <div>
+                    <div style="clear:both; margin-top: 10px;"></div>
+                    <button class="btn save" id="ed-save">Save Pattern</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Load appplication code at the end to ensure DOM is loaded -->
+    <script src="editor.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
